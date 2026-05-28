@@ -1,0 +1,240 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 130023424 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3686), pid=101248, tid=15304
+#
+# JRE version:  (21.0.7+6) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.7+6-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages org.testng.remote.RemoteTestNG -serport 50255 -protocol json -d C:\Users\Aditya Mandal\Downloads\SeleniumCucumberBDDFramework\test-output C:\Users\ADITYA~1\AppData\Local\Temp\testng-eclipse-1331310244\testng-customsuite.xml
+
+Host: 12th Gen Intel(R) Core(TM) i5-1235U, 12 cores, 7G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7623)
+Time: Sun Feb 15 15:01:29 2026 India Standard Time elapsed time: 2.073928 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000013ed793aa00):  JavaThread "Unknown thread" [_thread_in_vm, id=15304, stack(0x0000000fc6600000,0x0000000fc6700000) (1024K)]
+
+Stack: [0x0000000fc6600000,0x0000000fc6700000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ce119]
+V  [jvm.dll+0x8a84a1]
+V  [jvm.dll+0x8aa9ce]
+V  [jvm.dll+0x8ab0b3]
+V  [jvm.dll+0x27f8a6]
+V  [jvm.dll+0x6ca945]
+V  [jvm.dll+0x6bebea]
+V  [jvm.dll+0x355eca]
+V  [jvm.dll+0x35da96]
+V  [jvm.dll+0x3af72e]
+V  [jvm.dll+0x3af9d8]
+V  [jvm.dll+0x32a05c]
+V  [jvm.dll+0x32abbb]
+V  [jvm.dll+0x871719]
+V  [jvm.dll+0x3bc501]
+V  [jvm.dll+0x85a743]
+V  [jvm.dll+0x45080e]
+V  [jvm.dll+0x452451]
+C  [jli.dll+0x5278]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c53c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa8989a0c8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000013ed9dda0e0 WorkerThread "GC Thread#0"                     [id=14340, stack(0x0000000fc6700000,0x0000000fc6800000) (1024K)]
+  0x0000013ed9debc30 ConcurrentGCThread "G1 Main Marker"            [id=95488, stack(0x0000000fc6800000,0x0000000fc6900000) (1024K)]
+  0x0000013ed9ded860 WorkerThread "G1 Conc#0"                       [id=90728, stack(0x0000000fc6900000,0x0000000fc6a00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa88f9c987]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffa8990e408] Heap_lock - owner thread: 0x0000013ed793aa00
+
+Heap address: 0x0000000084e00000, size: 1970 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000084e00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa89387949]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.033 Loaded shared library C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff75d2e0000 - 0x00007ff75d2ee000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\javaw.exe
+0x00007ffb80d40000 - 0x00007ffb80fa7000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffb7eae0000 - 0x00007ffb7eba9000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffb7e590000 - 0x00007ffb7e97f000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffb7e990000 - 0x00007ffb7eadb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb55a10000 - 0x00007ffb55a2e000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\VCRUNTIME140.dll
+0x00007ffb757f0000 - 0x00007ffb75808000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\jli.dll
+0x00007ffb7f070000 - 0x00007ffb7f235000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffb7e070000 - 0x00007ffb7e097000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffb7f980000 - 0x00007ffb7f9ab000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffb7df40000 - 0x00007ffb7e06c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffb7de90000 - 0x00007ffb7df33000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffb5f310000 - 0x00007ffb5f5a3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7309_none_3e05feeae336a044\COMCTL32.dll
+0x00007ffb7f6d0000 - 0x00007ffb7f779000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffb7f4a0000 - 0x00007ffb7f4d1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffb6b9f0000 - 0x00007ffb6b9fc000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\vcruntime140_1.dll
+0x00007ffb335c0000 - 0x00007ffb3364d000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\msvcp140.dll
+0x00007ffa88c60000 - 0x00007ffa899f0000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\server\jvm.dll
+0x00007ffb7f3e0000 - 0x00007ffb7f494000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffb80290000 - 0x00007ffb80336000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffb80770000 - 0x00007ffb80888000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffb7f9b0000 - 0x00007ffb7fa24000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffb7dcf0000 - 0x00007ffb7dd4e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffb7b570000 - 0x00007ffb7b5a5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffb6a220000 - 0x00007ffb6a22b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffb7dcd0000 - 0x00007ffb7dce4000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffb7cc40000 - 0x00007ffb7cc5b000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffb6c9b0000 - 0x00007ffb6c9ba000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\jimage.dll
+0x00007ffb7b2a0000 - 0x00007ffb7b4e2000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffb80950000 - 0x00007ffb80cd6000 	C:\WINDOWS\System32\combase.dll
+0x00007ffb801a0000 - 0x00007ffb80276000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffb7b530000 - 0x00007ffb7b56c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffb7e4e0000 - 0x00007ffb7e585000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffb6bf70000 - 0x00007ffb6bf8f000 	C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7309_none_3e05feeae336a044;C:\Users\Aditya Mandal\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916\jre\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.testng.remote.RemoteTestNG -serport 50255 -protocol json -d C:\Users\Aditya Mandal\Downloads\SeleniumCucumberBDDFramework\test-output C:\Users\ADITYA~1\AppData\Local\Temp\testng-eclipse-1331310244\testng-customsuite.xml
+java_class_path (initial): C:\Users\Aditya Mandal\eclipse\jee-2025-03\eclipse\configuration\org.eclipse.osgi\1036\0\.cp\lib\testng-remote.jar;C:\Users\Aditya Mandal\Downloads\SeleniumCucumberBDDFramework\target\test-classes;C:\Users\Aditya Mandal\Downloads\SeleniumCucumberBDDFramework\target\classes;C:\Users\Aditya Mandal\.m2\repository\org\apache\poi\poi\3.6\poi-3.6.jar;C:\Users\Aditya Mandal\.m2\repository\commons-logging\commons-logging\1.1\commons-logging-1.1.jar;C:\Users\Aditya Mandal\.m2\repository\logkit\logkit\1.0.1\logkit-1.0.1.jar;C:\Users\Aditya Mandal\.m2\repository\avalon-framework\avalon-framework\4.1.3\avalon-framework-4.1.3.jar;C:\Users\Aditya Mandal\.m2\repository\javax\servlet\servlet-api\2.3\servlet-api-2.3.jar;C:\Users\Aditya Mandal\.m2\repository\log4j\log4j\1.2.13\log4j-1.2.13.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\poi\poi-ooxml\3.6\poi-ooxml-3.6.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.6\poi-ooxml-schemas-3.6.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\geronimo\specs\geronimo-stax-api_1.0_spec\1.0\geronimo-stax-api_1.0_spec-1.0.jar;C:\Users\Aditya Mandal\.m2\repository\dom4j\dom4j\1.1\dom4j-1.1.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\xmlbeans\xmlbeans\2.3.0\xmlbeans-2.3.0.jar;C:\Users\Aditya Mandal\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\Aditya Mandal\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\Aditya Mandal\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\Aditya Mandal\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;C:\Users\Aditya Mandal\.m2\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-java\3.11.0\selenium-java-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-api\3.11.0\selenium-api-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.11.0\selenium-chrome-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.11.0\selenium-edge-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.11.0\selenium-firefox-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.11.0\selenium-ie-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.11.0\selenium-opera-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.11.0\selenium-remote-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.11.0\selenium-safari-driver-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\seleniumhq\selenium\selenium-support\3.11.0\selenium-support-3.11.0.jar;C:\Users\Aditya Mandal\.m2\repository\net\bytebuddy\byte-buddy\1.7.9\byte-buddy-1.7.9.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Aditya Mandal\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Aditya Mandal\.m2\repository\com\google\guava\guava\23.6-jre\guava-23.6-jre.jar;C:\Users\Aditya Mandal\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Aditya Mandal\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Aditya Mandal\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Aditya Mandal\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Aditya Mandal\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\Aditya Mandal\.m2\repository\com\squareup\okhttp3\okhttp\3.9.1\okhttp-3.9.1.jar;C:\Users\Aditya Mandal\.m2\repository\com\squareup\okio\okio\1.13.0\okio-1.13.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\Aditya Mandal\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\Aditya Mandal\.m2\repository\com\codoid\products\fillo\1.16\fillo-1.16.jar;C:\Users\Aditya Mandal\.m2\repository\io\github\bonigarcia\webdrivermanager\3.0.0\webdrivermanager-3.0.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Aditya Mandal\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Aditya Mandal\.m2\repository\org\rauschig\jarchivelib\0.8.0\jarchivelib-0.8.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\commons\commons-compress\1.14\commons-compress-1.14.jar;C:\Users\Aditya Mandal\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\Aditya Mandal\.m2\repository\com\aventstack\extentreports\4.0.6\extentreports-4.0.6.jar;C:\Users\Aditya Mandal\.m2\repository\org\mongodb\mongodb-driver\3.3.0\mongodb-driver-3.3.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\mongodb\mongodb-driver-core\3.3.0\mongodb-driver-core-3.3.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\mongodb\bson\3.3.0\bson-3.3.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\apache\httpcomponents\httpmime\4.5.2\httpmime-4.5.2.jar;C:\Users\Aditya Mandal\.m2\repository\org\freemarker\freemarker\2.3.23\freemarker-2.3.23.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-java\4.2.0\cucumber-java-4.2.0.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-core\4.2.0\cucumber-core-4.2.0.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-html\0.2.7\cucumber-html-0.2.7.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\tag-expressions\1.1.1\tag-expressions-1.1.1.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-expressions\6.2.0\cucumber-expressions-6.2.0.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\datatable\1.1.7\datatable-1.1.7.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\datatable-dependencies\1.1.7\datatable-dependencies-1.1.7.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-testng\4.2.0\cucumber-testng-4.2.0.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-picocontainer\4.2.0\cucumber-picocontainer-4.2.0.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\gherkin\5.1.0\gherkin-5.1.0.jar;C:\Users\Aditya Mandal\.m2\repository\org\picocontainer\picocontainer\2.15\picocontainer-2.15.jar;C:\Users\Aditya Mandal\.m2\repository\io\cucumber\cucumber-jvm-deps\1.0.6\cucumber-jvm-deps-1.0.6.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 130023424                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2065694720                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2065694720                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-24
+PATH=C:/Users/Aditya Mandal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin/server;C:/Users/Aditya Mandal/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_21.0.7.v20250502-0916/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-24;C:\Program Files\Java\jdk-24\bin;C:\Users\Aditya Mandal\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk-24\bin;C:\Program Files\Java\jdk-24;;C:\WINDOWS\System32;
+USERNAME=Aditya Mandal
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 4, GenuineIntel
+TMP=C:\Users\ADITYA~1\AppData\Local\Temp
+TEMP=C:\Users\ADITYA~1\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7623)
+OS uptime: 21 days 14:34 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 154 stepping 4 microcode 0x437, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for the first 12 processors :
+  Max Mhz: 1300, Current Mhz: 1300, Mhz Limit: 1300
+
+Memory: 4k page, system-wide physical 7876M (144M free)
+TotalPageFile size 20876M (AvailPageFile size 73M)
+current process WorkingSet (physical memory assigned to process): 12M, peak: 12M
+current process commit charge ("private bytes"): 64M, peak: 188M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.7+6-LTS) for windows-amd64 JRE (21.0.7+6-LTS), built on 2025-04-15T00:00:00Z by "admin" with MS VC++ 17.7 (VS2022)
+
+END.
